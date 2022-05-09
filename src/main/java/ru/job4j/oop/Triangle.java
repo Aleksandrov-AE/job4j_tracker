@@ -1,5 +1,7 @@
 package ru.job4j.oop;
 
+import ru.job4j.oop.Point;
+
 public class Triangle {
     private Point first;
     private Point second;

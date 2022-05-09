@@ -1,6 +1,9 @@
 package ru.job4j.oop;
 
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.Test;
+import ru.job4j.oop.Battery;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -13,7 +16,7 @@ public class BatteryTest {
         Battery another = new Battery(50);
         charger.exchange(another);
         int expected = 80;
-        assertThat(expected, is(another.getLoad()));
+        MatcherAssert.assertThat(expected, Matchers.is(another.getLoad()));
     }
 
     @Test
@@ -22,7 +25,7 @@ public class BatteryTest {
         Battery another = new Battery(20);
         charger.exchange(another);
         int expected = 0;
-        assertThat(expected, is(charger.getLoad()));
+        MatcherAssert.assertThat(expected, Matchers.is(charger.getLoad()));
     }
 
     @Test
@@ -31,6 +34,6 @@ public class BatteryTest {
         Battery another = new Battery(0);
         charger.exchange(another);
         int expected = 95;
-        assertThat(expected, is(another.getLoad()));
+        MatcherAssert.assertThat(expected, Matchers.is(another.getLoad()));
     }
 }

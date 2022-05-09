@@ -4,7 +4,11 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Test;
+import ru.job4j.oop.Point;
+import ru.job4j.oop.Triangle;
 
 public class TriangleTest {
 
@@ -15,7 +19,7 @@ public class TriangleTest {
         Point c = new Point(0, 4);
         Triangle triangle = new Triangle(a, b, c);
         double result = triangle.area();
-        assertThat(result, closeTo(8, 0.001));
+        Assert.assertThat(result, Matchers.closeTo(8, 0.001));
     }
 
     @Test
@@ -26,7 +30,7 @@ public class TriangleTest {
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         double expected = -1;
-        assertEquals(rsl, expected, 0);
+        Assert.assertEquals(rsl, expected, 0);
     }
 
     @Test
@@ -37,6 +41,6 @@ public class TriangleTest {
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         double expected = -1;
-        assertEquals(rsl, expected, 0);
+        Assert.assertEquals(rsl, expected, 0);
     }
 }
