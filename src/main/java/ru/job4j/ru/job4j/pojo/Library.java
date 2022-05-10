@@ -21,7 +21,7 @@ public class Library {
         }
         System.out.println("\nShow book with name \"Clean Code\"\n");
         for (int i = 0; i < libBooks.length; i++) {
-            if (libBooks[i].getName().equals("Clean Code")) {
+            if ("Clean Code".equals(libBooks[i].getName())) {
                 System.out.println(libBooks[i].getName());
             }
 
