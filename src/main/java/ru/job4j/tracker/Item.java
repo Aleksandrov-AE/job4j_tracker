@@ -20,6 +20,10 @@ public class Item {
         this.name = n;
     }
 
+    public Item(String n) {
+        this.name = n;
+    }
+
     public LocalDateTime getDateTime()  {
         return creater;
     }
