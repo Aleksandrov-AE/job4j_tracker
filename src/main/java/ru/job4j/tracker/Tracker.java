@@ -52,8 +52,8 @@ public class Tracker {
         if (index == -1) {
             return false;
         }
-
-        items[index].setName(item.getName());
+        item.setId(id);
+        items[index] = item;
         return true;
     }
 }
