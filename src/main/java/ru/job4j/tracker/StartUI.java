@@ -16,7 +16,7 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
-                System.out.println("Добавлена заявка: " + item);
+                System.out.println("Р”РѕР±Р°РІР»РµРЅРЅР°СЏ Р·Р°СЏРІРєР°: " + item);
             } else if (select == 6) {
                 run = false;
             }
