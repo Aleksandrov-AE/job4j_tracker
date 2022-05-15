@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class Matches {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Èãðà 11.");
+        System.out.println("Ð˜Ð³Ñ€Ð° 11.");
         boolean turn = true;
         int count = 11;
         while (count > 0) {
-            String player = turn ? "Ïåðâûé èãðîê" : "Âòîðîé èãðîê";
-            System.out.println(player + " ââåäèòå ÷èñëî îò 1 äî 3:");
+            String player = turn ? "ÐŸÐµÑ€Ð²Ñ‹Ð¹ Ð¸Ð³Ñ€Ð¾Ðº" : "Ð’Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð¸Ð³Ñ€Ð¾Ðº";
+            System.out.println(player + " Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 1 Ð´Ð¾ 3:");
             int matches = Integer.parseInt(input.nextLine());
             if (matches >= 1 && matches <= 3 && matches <= count) {
                 count -= matches;
-                System.out.println("Îñòàëîñü " + count + " ñïè÷åê");
+                System.out.println("ÐžÑÑ‚Ð°Ð»Ð¾ÑÑŒ " + count + " ÑÐ¿Ð¸Ñ‡ÐµÐº");
                 turn = !turn;
             } else {
-                    System.out.println("Îøèáêà, ââåäåíîå íåâåðíîå ÷èñëî");
+                    System.out.println("ÐžÑˆÐ¸Ð±ÐºÐ° , Ð²Ð²ÐµÐ´ÐµÐ½Ð¾Ðµ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾");
             }
         }
         if (!turn) {
-            System.out.println("Âûèãðàë ïåðâûé èãðîê");
+            System.out.println("Ð’Ñ‹Ð¸Ð³Ñ€Ð°Ð» Ð¿ÐµÑ€Ð²Ñ‹Ð¹ Ð¸Ð³Ñ€Ð¾Ðº");
         } else {
-            System.out.println("Âûèãðàë âòîðîé èãðîê");
+            System.out.println("Ð’Ñ‹Ð¸Ð³Ñ€Ð°Ð» Ð²Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð¸Ð³Ñ€Ð¾Ðº");
         }
     }
 }
