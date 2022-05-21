@@ -8,10 +8,6 @@ import static org.junit.Assert.*;
 public class ValidateInputTest {
 
     @Test
-    public void askStr() {
-    }
-
-    @Test
     public void whenInvalidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
