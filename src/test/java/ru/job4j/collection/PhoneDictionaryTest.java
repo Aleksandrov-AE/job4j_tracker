@@ -22,7 +22,7 @@ public class PhoneDictionaryTest {
     public void whenFindByNameNull() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
-                new Person("Petr", "Arsentev", "534872", "Bryansk")
+                new Person("Petr", "Arsentev", "538872", "Bryansk")
         );
         ArrayList<Person> persons = phones.find("Kosta");
         assertEquals(persons.size(), 0);
