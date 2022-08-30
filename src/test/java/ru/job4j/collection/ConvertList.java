@@ -6,8 +6,8 @@ import java.util.List;
 public class ConvertList {
     public static List<Integer> convert(List<int[]> list) {
         List<Integer> rsl = new ArrayList<>();
-        for (int[] i: list) {
-            for (Integer num : i) {
+        for (int[] listInt: list) {
+            for (Integer num : listInt) {
                 rsl.add(num);
             }
         }
