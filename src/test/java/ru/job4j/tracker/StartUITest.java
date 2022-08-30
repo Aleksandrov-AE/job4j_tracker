@@ -121,7 +121,6 @@ public class StartUITest {
                 actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        String s = one.toString();
         assertThat(out.toString(), is(
                 "Menu." + ln
                         + "0. Find item by id" + ln
