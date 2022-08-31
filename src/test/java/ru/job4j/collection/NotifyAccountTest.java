@@ -24,4 +24,20 @@ public class NotifyAccountTest {
         );
         assertThat(notifyAccount.sent(accounts)).containsAll(expect);
     }
+
+    @Test
+    public void whenTwoOfThreeAccountsAddSent() {
+        NotifyAccount notifyAccount = new NotifyAccount();
+        List<Account> accounts = Arrays.asList(
+                new Account("123", "Petr Arsentev", "eDer3432f"),
+                new Account("123", "Petr Arsentev", "000001"),
+                new Account("12345", "Artem Arsentev", "000001"));
+        HashSet<Account> expect = new HashSet<>(
+                Arrays.asList(
+                        new Account("123", "Petr Arsentev", "eDer3432f"),
+                        new Account("12345", "Artem Arsentev", "000001")
+                )
+        );
+        assertThat(notifyAccount.sent(accounts)).containsAll(expect);
+    }
 }
