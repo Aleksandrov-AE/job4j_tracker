@@ -14,10 +14,9 @@ public class BankService {
 
     public void addAccount(String passport, Account account) {
         User key = findByPassport(passport);
-            if (users.get(key).contains(account)) {
-                return;
-            }
-        users.get(key).add(account);
+        if (key != null && !users.get(key).contains(account)) {
+            users.get(key).add(account);
+        }
     }
 
     public User findByPassport(String passport) {
