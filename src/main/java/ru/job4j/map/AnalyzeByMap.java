@@ -32,7 +32,7 @@ public class AnalyzeByMap {
         HashMap<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                map.merge(subject.name(), subject.score(), (oldValue, newValue) -> oldValue + newValue);
+                map.merge(subject.name(), subject.score(), (oldScope, newScope) -> oldScope + newScope);
             }
         }
         for (String subject : map.keySet()) {
