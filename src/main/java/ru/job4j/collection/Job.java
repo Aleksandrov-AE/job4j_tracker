@@ -7,23 +7,6 @@ public class Job implements Comparable<Job> {
 
     private int priority;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Job job = (Job) o;
-        return priority == job.priority && name.equals(job.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, priority);
-    }
-
     public Job(String name, int priority) {
         this.name = name;
         this.priority = priority;
@@ -45,5 +28,22 @@ public class Job implements Comparable<Job> {
     @Override
     public int compareTo(Job another) {
         return Integer.compare(priority, another.priority);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Job job = (Job) o;
+        return priority == job.priority && name.equals(job.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, priority);
     }
 }
