@@ -2,7 +2,15 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Модель данных пользователя
+ *  * @author ANATOLIT ALEXANDROV
+ *  *  * @version 1.0
+ */
 public class User {
+    /**
+     * два параметра пасспорт и имя пользователя, хранятся в String
+     */
     private String passport;
     private String username;
 

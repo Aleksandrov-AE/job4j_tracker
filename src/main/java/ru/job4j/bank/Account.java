@@ -2,7 +2,15 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+* Класс описывает модель данных банковского счета
+ * @author ANATOLIT ALEXANDROV
+ *  * @version 1.0
+ */
 public class Account {
+    /**
+     * модель банковского счета содержит поля: баланс и реквизиты.
+     */
     private String requisite;
     private double balance;
 
@@ -27,6 +35,11 @@ public class Account {
         this.balance = balance;
     }
 
+    /**
+     *
+     * @param o аккаунт с которым будем сравнивать
+     * @return true если поля реквизиты равны
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
