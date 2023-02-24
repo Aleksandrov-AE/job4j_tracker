@@ -4,7 +4,7 @@ public class PasswordValidator {
 
      public static String validate(String password) {
         boolean containLowerLetter = false;
-        boolean containUpperLetter =false;
+        boolean containUpperLetter = false;
         boolean containDigit = false;
         boolean containSpecialSymbol = false;
         if (password == null) {
