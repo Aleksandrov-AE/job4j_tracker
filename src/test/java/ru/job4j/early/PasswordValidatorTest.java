@@ -137,8 +137,7 @@ class PasswordValidatorTest {
     @Test
     void whenPasswordContainSubstringUser() {
         String password = "Ln2$mUSerTY12";
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> PasswordValidator.validate(password)
         );
         String expected = "Password shouldn't contain substrings: qwerty, 12345, password, admin, user";
