@@ -17,7 +17,7 @@ public class AppleStore {
         for (int i = 0; i < count; i++) {
             lastCustomer = queue.poll();
         }
-        return lastCustomer.name();
+        return lastCustomer != null ? lastCustomer.name() : "No last client data";
     }
 
     public String getFirstUpsetCustomer() {
@@ -26,6 +26,6 @@ public class AppleStore {
             firstUpsetCustomer = queue.poll();
         }
 
-        return count <= queue.size() ? firstUpsetCustomer.name() : "no firstUpsetCustomer";
+        return firstUpsetCustomer != null && count >= queue.size() ? firstUpsetCustomer.name() : "no firstUpsetCustomer";
     }
 }
