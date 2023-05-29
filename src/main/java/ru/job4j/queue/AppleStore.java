@@ -26,6 +26,6 @@ public class AppleStore {
             firstUpsetCustomer = queue.poll();
         }
 
-        return firstUpsetCustomer != null && count >= queue.size() ? firstUpsetCustomer.name() : "no firstUpsetCustomer";
+        return firstUpsetCustomer != null && count >= queue.size() ? firstUpsetCustomer.name() : "no firstUpsetCustomer data";
     }
 }
