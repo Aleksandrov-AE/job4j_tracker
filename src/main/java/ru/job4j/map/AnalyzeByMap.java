@@ -59,12 +59,7 @@ public class AnalyzeByMap {
         HashMap<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-
-                if (map.containsKey(subject.getName())) {
-                    map.put(subject.getName(), subject.getScore() + map.get(subject.getName()));
-                } else {
-                    map.put(subject.getName(), subject.getScore());
-                }
+                map.merge(subject.getName(), subject.getScore(), Integer::sum);
             }
         }
         for (String subject : map.keySet()) {
