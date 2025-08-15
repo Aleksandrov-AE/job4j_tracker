@@ -95,7 +95,7 @@ public class SqlTracker implements Store {
     @Override
     public List<Item> findAll() {
         List<Item> results = new ArrayList<>();
-        try(PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL)){
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL)) {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     results.add(getRow(resultSet));
@@ -110,7 +110,7 @@ public class SqlTracker implements Store {
     @Override
     public List<Item> findByName(String key) {
         List<Item> results = new ArrayList<>();
-        try(PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_NAME)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_NAME)) {
             preparedStatement.setString(1, key);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -126,15 +126,15 @@ public class SqlTracker implements Store {
     @Override
     public Item findById(int id) {
         Item item = null;
-        try(PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_ID)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_ID)) {
             preparedStatement.setInt(1, id);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-               if(resultSet.next()) {
+               if (resultSet.next()) {
                    item = getRow(resultSet);
                }
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Failed to find by id item",e);
+            throw new RuntimeException("Failed to find by id item", e);
         }
         return item;
     }

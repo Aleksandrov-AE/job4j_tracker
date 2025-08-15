@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class MemTracker implements Store{
+public class MemTracker implements Store {
     private static final String SQL_UPDATE_ITEM = "UPDATE items SET name = ?, create_date = ? WHERE id = ?";
     private static final String SQL_DELETE_BY_ID = "DELETE FROM items WHERE id = ?";
     private static final String SQL_SELECT_ALL = "SELECT id, name, create_date FROM items";
@@ -93,7 +93,7 @@ public class MemTracker implements Store{
     @Override
     public List<Item> findAll() {
         List<Item> results = new ArrayList<>();
-        try(PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL)){
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL)) {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     results.add(getRow(resultSet));
@@ -108,7 +108,7 @@ public class MemTracker implements Store{
     @Override
     public List<Item> findByName(String key) {
         List<Item> results = new ArrayList<>();
-        try(PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_NAME)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_NAME)) {
             preparedStatement.setString(1, key);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -124,15 +124,15 @@ public class MemTracker implements Store{
     @Override
     public Item findById(int id) {
         Item item = null;
-        try(PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_ID)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_BY_ID)) {
             preparedStatement.setInt(1, id);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if(resultSet.next()) {
+                if (resultSet.next()) {
                     item = getRow(resultSet);
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Failed to find by id item",e);
+            throw new RuntimeException("Failed to find by id item", e);
         }
         return item;
     }
