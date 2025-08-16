@@ -72,6 +72,7 @@ public class SqlTracker implements Store {
             Timestamp timestamp = Timestamp.valueOf(item.getDateTime());
             preparedStatement.setTimestamp(2, timestamp);
             preparedStatement.setInt(3, id);
+            item.setId(id);
             return preparedStatement.executeUpdate() == 1;
         } catch (SQLException e) {
             throw new RuntimeException("Failed to update item id=" + id + ", name='" + item.getName() + "'", e);
