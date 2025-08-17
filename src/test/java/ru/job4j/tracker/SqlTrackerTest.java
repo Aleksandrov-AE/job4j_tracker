@@ -86,6 +86,16 @@ public class SqlTrackerTest {
     }
 
     @Test
+    public void whenDeleteItemAndCheckNotClearAll() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = new Item("item");
+        tracker.add(item);
+        tracker.add(new Item("newItem"));
+        tracker.delete(item.getId());
+        assertThat(tracker.findAll().size()).isEqualTo(1);
+    }
+
+    @Test
     public void whenFindAll() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = new Item("item");
